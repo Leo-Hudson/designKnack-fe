@@ -1,0 +1,44 @@
+:root {
+  --primary: #357AC8;
+  --primaryRGB15: rgba(53, 122, 200, 15%);
+  --primaryRGB30: rgba(53, 122, 200, 30%);
+  --secondary: #000041;
+  --paragraphBlack: #1A1A1A;
+  --headingBlack: #000000;
+  --inputBorder: #767D8D;
+  --grey: #C4C4C4;
+  --white: #ffffff;
+  --transition03s: .3s all ease-in-out;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* You can set the fonts manually */
+@font-face {
+  font-family: ClashDisplayMedium;
+  src: url(./assets/fonts/ClashDisplay-Medium.otf);
+}
+
+@font-face {
+  font-family: ClashDisplaySemibold;
+  src: url(./assets/fonts/ClashDisplay-Semibold.otf);
+}
+
+@font-face {
+  font-family: MontSerratRegular;
+  src: url(./assets/fonts/Montserrat-Regular.otf);
+}
+
+@font-face {
+  font-family: MontSerratMedium;
+  src: url(./assets/fonts/Montserrat-Medium.otf);
+}
+
+@font-face {
+  font-family: MontSerratSemibold;
+  src: url(./assets/fonts/Montserrat-SemiBold.otf);
+}

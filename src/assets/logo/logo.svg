@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="371.125" height="82.509" viewBox="0 0 371.125 82.509">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.13" y1="0.042" x2="1.144" y2="1.105" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#357ac8"/>
+      <stop offset="1" stop-color="#000041"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_1619" data-name="Group 1619" transform="translate(-101.14 -394.493)">
+    <text id="DesignsKnack" transform="translate(341.265 448.97)" fill="#000041" font-size="37" font-family="Montserrat-SemiBold, Montserrat" letter-spacing="-0.02em" font-weight="600"><tspan x="-130" y="0">Designs</tspan><tspan y="0" font-family="Montserrat-Regular, Montserrat" font-weight="400">Knack</tspan></text>
+    <path id="Path_1" data-name="Path 1" d="M183.446,410.472h-.008a41.365,41.365,0,0,0-32.547-15.979H138.175v14.838h12.715a26.337,26.337,0,0,1,18.653,7.766,24.746,24.746,0,0,1,2.131,2.418,26.416,26.416,0,0,1-20.784,42.649H138.175V477h12.715a41.211,41.211,0,0,0,32.555-66.53Zm-43.632,14.521-9.662-9.324v-14.46H114.293v15.858h14.272l9.61,9.263V446.5h21.509v-21.51Zm-27.054,7.7v12.556h12.557V432.692ZM101.14,418v7.85h7.849V418Z" fill="url(#linear-gradient)"/>
+  </g>
+</svg>
