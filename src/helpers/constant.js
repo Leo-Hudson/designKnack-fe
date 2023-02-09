@@ -21,41 +21,48 @@ export const rootColors = {
   
 }
 
-export const footerMenus = {
+export const layout = {
+    mobile: '280px',
+    tablet: '768px',
+    laptop: '1001px',
+    desktop: '1368px',
+}
+
+export const menus = {
     quickLinks:[
         {
             name:"Home",
             path:"/"
         },
         {
-            name:"Services",
-            path:"/Services"
-        },
-        {
             name:"How We Work",
-            path:"/howwework"
+            path:"/how-we-work"
         },
         {
             name:"Contact Us",
-            path:"/contact"
+            path:"/contact-us"
+        },
+        {
+            name: "Get a Quote",
+            path: "/get-quote"
         }
     ],
     services:[
         {
             name:"Web App Development",
-            path:"/"
+            path:"/web-app-development"
         },
         {
             name:"Mobile App Development",
-            path:"/Services"
+            path:"/mobile-app-development"
         },
         {
             name:"Front End Development",
-            path:"/howwework"
+            path:"/front-end-development"
         },
         {
             name:"Hire Dedicated Developers",
-            path:"/contact"
+            path:"/hire-dedicated-developers"
         }
     ],
     contactUs:[
@@ -66,12 +73,12 @@ export const footerMenus = {
         },
         {
             name:"info@designknack@gmail.com",
-            path: "/Services",
+            path: "/",
             icon: primaryMail
         },
         {
             name:"123-456-7890",
-            path: "/howwework",
+            path: "/",
             icon: primaryPhone
         }
     ]

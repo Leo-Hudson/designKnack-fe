@@ -211,7 +211,7 @@ function OurServices() {
                             <div className='serviceCard'>
                                 <div>
                                     <img src={hireDedicated} alt="" width="" height="" />
-                                    <H5>Hire Dedicated <br /> <InnerHeading className='secondColor'>Development</InnerHeading></H5>
+                                    <H5>Hire Dedicated <br /> <InnerHeading className='secondColor'>Developers</InnerHeading></H5>
                                 </div>
                                 <P5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</P5>
                             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ContentBox, Section } from "../../components/Banners"
-import { H2, H4, H5, P3, P5 } from "../../components/Typography"
+import { H5, P3 } from "../../components/Typography"
 import styled from "styled-components"
 import blue_gradient from '../../assets/backgrounds/blue_gradient.jpg'
 import { arrowForwardBlue } from '../../assets/icons'
@@ -8,7 +8,7 @@ import { americanExpress, brandChinaUnionpay, brandMasterCard, discover, payPal,
 import { instagram, google, linkedinIn, twitter, facebook, youtube, circleArrow } from '../../assets/icons'
 import { fonts, rootColors } from '../../helpers/constant'
 import { NavLink } from 'react-router-dom'
-import { footerMenus } from '../../helpers/constant'
+import { menus } from '../../helpers/constant'
 
 
 const Content = styled.div`
@@ -171,9 +171,9 @@ const SubscribeInput = styled.div`
 `
 
 function Footer() {
-    const [quickLinks, setQuickLinks] = useState(footerMenus.quickLinks)
-    const [services, setServices] = useState(footerMenus.services)
-    const [contactUs, setContactUs] = useState(footerMenus.contactUs)
+    const [quickLinks, setQuickLinks] = useState(menus.quickLinks)
+    const [services, setServices] = useState(menus.services)
+    const [contactUs, setContactUs] = useState(menus.contactUs)
 
     return (
         <Section bgImage={blue_gradient}>
@@ -186,34 +186,36 @@ function Footer() {
                             <Links>
                                 {
                                     quickLinks && quickLinks.map(({ name, path }, index) => {
-                                        return <Li>
-                                            <NavLink to={path} key={index}> {name} </NavLink>
+                                        return <Li key={index + name}>
+                                            <NavLink to={path} > {name} </NavLink>
                                         </Li>
                                     })
                                 }
                             </Links>
                         
                         </div>
+
                         {/* Services */}
                         <div>
                             <H5>Services</H5>
                             <Links>
                                 {
                                     services && services.map(({ name, path }, index) => {
-                                        return <Li>
-                                            <NavLink to={path} key={index}> {name} </NavLink>
+                                        return <Li key={index + name}>
+                                            <NavLink to={path} > {name} </NavLink>
                                         </Li>
                                     })
                                 }
                             </Links>
                         </div>
+
                         {/* Contact Us */}
                         <div>
                             <H5>Contact Us</H5>
                             <Links>
                                 {
                                     contactUs && contactUs.map(({ name, path, icon }, index) => {
-                                        return <Li icon={true} className='contactUsIcons'>
+                                        return <Li icon={true} key={index + name} className='contactUsIcons'>
                                             <img src={icon} alt='' width="" height=""/>
                                             <NavLink to={path} key={index}> {name} </NavLink>
                                         </Li>
@@ -222,6 +224,7 @@ function Footer() {
 
                             </Links>
                         </div>
+
                         {/* Subscribe To Our Newsletter and Follow Us on */}
                         <SubscriberBox>
                             <div className='subscribeNewsletter'>

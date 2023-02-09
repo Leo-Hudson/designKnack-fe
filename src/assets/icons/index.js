@@ -29,6 +29,7 @@ import dots from './dots.svg'
 import quote from './quote.svg'
 import arrowLeft from './arrow-left.svg'
 import arrowRight from './arrow-right.svg'
+import menuIcon from './menu_icon.svg'
 import ideation from './Process/Ideation.svg'
 import design from './Process/Design.svg'
 import test from './Process/Test.svg'
@@ -69,6 +70,7 @@ export {
     dots,
     arrowLeft,
     arrowRight,
+    menuIcon,
     ideation,
     design,
     test,

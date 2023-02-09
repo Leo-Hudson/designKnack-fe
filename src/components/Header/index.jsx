@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { fonts, rootColors } from '../../helpers/constant'
+import { fonts, layout, rootColors } from '../../helpers/constant'
 import logo from '../../assets/logo/logo.svg'
 import { ContentBox } from '../Banners'
 import { PrimaryButton } from '../Buttons'
 import { P3 } from '../Typography'
-import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube } from '../../assets/icons'
-
+import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube, menuIcon } from '../../assets/icons'
 
 const HeaderSection = styled.div`
   min-height:14px;
@@ -15,46 +14,6 @@ const HeaderSection = styled.div`
   position:relative;
   z-index:2;
   margin-bottom:-100px;
-  
-  
-  
-  .bottom{
-    .bottomContent{
-      display:grid;
-      grid-template-columns: auto 1fr;
-      gap:2vw;
-      place-items:center;
-      padding-block:10px;
-      background:transparent;
-      
-      .logo{
-        width:clamp(200px, 19vw ,370px);
-      }
-
-      .menu{
-        width:100%;
-        display:flex;
-        justify-content:right;
-        align-items:center;
-        gap: 2.5vw;
-        font-family:${fonts.montSerratMedium};
-        font-size:clamp(16px, 1.2vw, 20px);
-
-        a{
-          color:${rootColors.headingBlack};
-          padding-bottom:5px;
-          border-bottom:1px solid transparent;
-        }
-        
-        a:hover, .active{
-          color:${rootColors.secondary};
-          border-bottom:1px solid ${rootColors.secondary};
-        }
-        
-      }
-    }
-    
-  }
 
   .top{
     background: ${rootColors.secondary};
@@ -92,6 +51,63 @@ const HeaderSection = styled.div`
       }
     }
   }
+  
+  .bottom{
+    .bottomContent{
+      display:grid;
+      grid-template-columns: auto 1fr;
+      gap:2vw;
+      place-items:center;
+      padding-block:10px;
+      background:transparent;
+    
+    
+      .logo{
+        width:clamp(200px, 19vw ,370px);
+      }
+
+      .menu{
+        width:100%;
+        display:flex;
+        justify-content:right;
+        align-items:center;
+        gap: 2.5vw;
+        font-family:${fonts.montSerratMedium};
+        font-size:clamp(16px, 1.2vw, 20px);
+
+        a{
+          color:${rootColors.headingBlack};
+          padding-bottom:5px;
+          border-bottom:1px solid transparent;
+        }
+        
+        a:hover, .active{
+          color:${rootColors.secondary};
+          border-bottom:1px solid ${rootColors.secondary};
+        }
+        
+      }
+      .hamburger{
+        display:none;
+      }
+
+      @media only screen and (max-width: ${layout.laptop}) {
+        .menu{
+          background:black;
+          display:none;
+        }
+        .hamburger{
+          display:initial;
+          margin-inline:auto 0px;
+        }
+      }
+    }
+
+    
+    
+  }
+
+  
 `
 
 function Header() {
@@ -130,18 +146,21 @@ function Header() {
                 <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
-                <NavLink to={"/Services"}>Services</NavLink>
+                <NavLink to={"/services"}>Services</NavLink>
               </li>
               <li>
-                <NavLink to={"/Ser"}>How We Work</NavLink>
+                <NavLink to={"/how-we-work"}>How We Work</NavLink>
               </li>
               <li>
-                <NavLink to={"/S"}>Contact Us</NavLink>
+                <NavLink to={"/contact-us"}>Contact Us</NavLink>
               </li>
               <li>
                 <PrimaryButton>GET A QUOTE</PrimaryButton>
               </li>
             </ul>
+            <div className='hamburger'>
+              <img src={menuIcon} alt="" width="" height="" />
+            </div>
           </ContentBox>
         </div>
 

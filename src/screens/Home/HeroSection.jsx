@@ -24,7 +24,7 @@ const Hero = styled(Section)`
 
 
 const Overlay = styled.div`
-    padding-block:14vw 10vw;
+    padding-block:12vw 10vw;
     z-index:1;
     width:100%;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.85) 60%);
