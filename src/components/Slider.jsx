@@ -10,6 +10,9 @@ import { arrowLeft, arrowRight, quote } from '../assets/icons';
 import { H6, P6 } from './Typography';
 import { fonts, rootColors } from '../helpers/constant';
 import { PrimaryIconButton } from './Buttons';
+import { layout } from "../helpers/constant";
+
+const { mobile, tablet, laptop, desktop } = layout
 
 const SliderBox = styled.div`
 
@@ -52,6 +55,7 @@ const Card = styled.div`
     .picture{
         z-index:1;
         width:100%;
+        margin-block:auto 0px;
     }
 
     .forCardBG{
@@ -61,6 +65,16 @@ const Card = styled.div`
         right:0px;
         z-index:0;
     }
+
+    @media only screen and (min-width: ${tablet}) {
+        grid-template-rows:minmax(30vw, 300px);
+
+    } 
+    
+    @media only screen and (min-width: ${desktop}) {
+        grid-template-rows:minmax(23vw, 400px);
+
+    } 
     
 `
 
@@ -79,8 +93,10 @@ const Indicators = styled.div`
 const Content = styled.div`
     z-index:1;
     padding-bottom:1.5vw;
+    margin-block:auto;
+
     img{
-        width:clamp(50px, 4.5vw, 94px);
+        width:clamp(30px, 4.5vw, 94px);
         margin-bottom:2vw;
     }
     h6{

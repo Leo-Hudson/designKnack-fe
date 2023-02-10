@@ -1,19 +1,12 @@
 import styled from "styled-components";
-import { fonts } from "../helpers/constant";
+import { fonts, rootColors } from "../helpers/constant";
 
 
 const { poppinsRegular } = fonts
 
 export const Input = styled.input`
     width: 100%;
-    /* max-width:438px; */
-    /* height:70px; */
-    /* background:url(${({ isIcon }) => isIcon});
-    background-repeat:no-repeat;
-    background-size:1em;
-    background-position-x: 410px;
-    background-position-y: center; */
-    color: var(--headingBlack);
+    color: ${rootColors.headingBlack};
     border-radius: 10px;
     outline: none;
     padding-left: 25px;
@@ -31,7 +24,7 @@ export const Input = styled.input`
 export const TextArea = styled.textarea`
     width: 100%;
     resize:none;
-    color: var(--headingBlack);
+    color: ${rootColors.headingBlack};
     border-radius: 10px;
     outline: none;
     padding-left: 25px;

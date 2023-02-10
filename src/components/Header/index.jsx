@@ -8,6 +8,9 @@ import { PrimaryButton } from '../Buttons'
 import { P3 } from '../Typography'
 import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube, menuIcon } from '../../assets/icons'
 
+
+const { mobile, tablet, laptop, desktop } = layout
+
 const HeaderSection = styled.div`
   min-height:14px;
   max-height:100px;
@@ -38,18 +41,48 @@ const HeaderSection = styled.div`
           p{
             color:white;
           }
+          img{
+            width:clamp(15px, 1.5vw, 24px);
+          }
         }
       }
       .rightSide{
         display:flex;
         align-items:center;
-        gap:1.5vw;
+        gap:1.7vw;
         
         img{
-          height:100%;
+          height:clamp(15px, 2vw, 20px);
         }
       }
     }
+    @media only screen and (min-width: ${mobile}) {
+      .topContent{
+        .leftSide div p{
+         display:none;
+        }
+        .leftSide div img{
+          width:auto;
+          height:clamp(15px, 2vw, 20px);
+        }
+        .rightSide{
+          gap:10px;
+        }
+      }
+    }  
+    @media only screen and (min-width: ${tablet}) {
+      .topContent{
+        .leftSide div p{
+          display:initial;
+        }
+        .leftSide div img{
+          height:initial;
+        }
+        .rightSide{
+          gap:1.5vw;
+        }
+      }
+    }  
   }
   
   .bottom{
@@ -118,11 +151,11 @@ function Header() {
           <ContentBox className='topContent'>
             <div className='leftSide'>
               <div>
-                <img src={primaryPhone} alt="" />
+                <img src={primaryPhone} alt="" width="" height="" />
                 <P3><a href="">123-456-7890</a></P3>
               </div>
               <div>
-                <img src={primaryMail} alt="" />
+                <img src={primaryMail} alt="" width="" height="" />
                 <P3><a href="">info@designknacks.com</a></P3>
               </div>
             </div>

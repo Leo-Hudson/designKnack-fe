@@ -4,21 +4,24 @@ import { H2, H3, H5, P2, P5 } from "../../components/Typography"
 import styled from "styled-components"
 import bgServices from "../../assets/backgrounds/services.webp"
 import { BoxHeading, InnerHeading } from '../../components/Headings'
-import { rootColors } from '../../helpers/constant'
+import { rootColors, layout } from '../../helpers/constant'
 import { frontend, mobileApp, hireDedicated, webApp, triangles, triangle } from '../../assets/icons'
+
+const { mobile, tablet, laptop, desktop } = layout
+
 
 const Services = styled(Section)`
     position:relative;
 
     .triangles{
-        width:clamp(100px, 14vw, 152px);
+        width:clamp(40px, 14vw, 152px);
         position:absolute;
         top:0px;
         z-index:1;
         
     }
     .triangle{
-        width:clamp(100px, 14vw, 152px);
+        width:clamp(40px, 14vw, 152px);
         position:absolute;
         top:50%;
         transform:translateY(-50%);
@@ -45,6 +48,7 @@ const Content = styled.div`
     z-index:3;
     position:relative;
     padding-block:8vw;
+    margin-inline:auto;
 
     .counterContent{
         .boxHeading{
@@ -54,6 +58,43 @@ const Content = styled.div`
         h3{
             margin-bottom:3.3vw;
         }
+    }
+    
+    @media only screen and (min-width: ${mobile}) {
+        .counterContent{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            
+            h3{
+                max-width:100%;
+                margin-bottom:7.3vw;
+            }
+        }
+        width:90%;
+        grid-template-columns:1fr;
+    }
+    @media only screen and (min-width: ${tablet}) {
+        .counterContent{
+            h3{
+                max-width:70%;
+                margin-bottom:3.3vw;
+            }
+        }
+    }
+    @media only screen and (min-width: ${laptop}) {
+        .counterContent{
+            display:initial;
+            text-align:initial;
+            h3{
+                max-width:initial;
+            }
+        }
+        width:100%;
+        grid-template-columns:1fr 1fr;
+
     }
 `
 const CountBox = styled.div`
@@ -79,6 +120,28 @@ const CountBox = styled.div`
             color:${rootColors.headingBlack};
         }
     }  
+
+    @media only screen and (min-width: ${mobile}) {
+        gap:4.3vw 5%;
+        .item{
+            flex:45%;
+            h2{
+                margin-bottom: 0px;   
+            }
+        }
+    }
+    @media only screen and (min-width: ${tablet}) {
+        width:100%;
+        gap:3.3vw 10%;
+        flex:40%;
+        .item{
+            h2{
+                margin-bottom: 13px;   
+            }
+           
+        }
+    }
+
     
 `
 
@@ -93,7 +156,7 @@ const CardsBox = styled.div`
 
     .serviceCard{
         flex:45%;
-        height:450px;
+        height:clamp(350px, 22.5vw, 450px);
         border-radius:10px;
         border:1px solid ${rootColors.primary};
         background:${rootColors.white};
@@ -110,7 +173,7 @@ const CardsBox = styled.div`
         }
         
         img{
-            width:clamp(85px, 5.5vw, 110px);
+            width:clamp(65px, 6.5vw, 110px);
             margin-bottom:1.5vw;
         }
         h5{
@@ -124,32 +187,63 @@ const CardsBox = styled.div`
             transition:var(--transition03s);
             opacity:0;
             margin-bottom:-150px;
+            height:130px;
         }
 
+        &:hover{
+            background: ${rootColors.secondary};
+            border:1px solid transparent;
+            .secondColor{
+                color:${rootColors.white};
+            }
+            p{
+                height:initial;
+                visibility:visible;
+                color:${rootColors.white};
+                margin-bottom:0px;
+                transition:var(--transition03s);
+                opacity:1;
+            }
+            img{
+                filter:invert(100%) saturate(0%);
+            }
+        
+        }   
         
     }   
-    
-    .serviceCard:hover{
-        background: ${rootColors.secondary};
-        border:1px solid transparent;
-        .secondColor{
-            color:${rootColors.white};
+    @media only screen and (min-width: ${mobile}) {
+        gap:5vw 3vw;
+        width:100%;
+        margin-inline:auto;
+        justify-content:center;
+        .serviceCard{
+            flex:260px;
+            flex-grow:0;
         }
-        p{
-            visibility:visible;
-            color:${rootColors.white};
-            margin-bottom:0px;
-            transition:var(--transition03s);
-            opacity:1;
+    }
+    @media only screen and (min-width: ${tablet}) {
+        gap:5vw 4%;
+        width:90%;
+        .serviceCard{
+            flex:42%;
+            flex-grow:0;
         }
-        img{
-            filter:invert(100%) saturate(0%);
+    }
+    @media only screen and (min-width: ${laptop}) {
+        gap:3vw 10%;
+        width:100%;
+        .serviceCard{
+            flex:45%;
+            flex-grow:initial;
         }
         
     }
-
+    @media only screen and (min-width: ${desktop}) {
+        .serviceCard{
+            height:clamp(400px, 25vw, 480px);
+        }
     
-
+    }
     
 `
 
@@ -192,28 +286,28 @@ function OurServices() {
                             <div className='serviceCard'>
                                 <img src={webApp} alt="" width="" height="" />
                                 <H5>Web App <br /><InnerHeading className='secondColor'>Development</InnerHeading></H5>
-                                <P5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</P5>
+                                <P5>We help elevate businesses by expanding their digital capability through functional websites that relate with their customers. Our teams are two steps ahead with the client's needs in mind</P5>
                             </div>
                             <div className='serviceCard'>
                                 <div>
                                     <img src={mobileApp} alt="" width="" height="" />
                                     <H5>Mobile App <br /> <InnerHeading className='secondColor'>Development</InnerHeading></H5>
                                 </div>
-                                <P5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</P5>
+                                <P5>For organizations wishing to expand their digital footprint, we provide expert app development services. We have a staff of skilled developers that are experts in both the iOS and Android platforms.</P5>
                             </div>
                             <div className='serviceCard'>
                                 <div>
                                     <img src={frontend} alt="" width="" height="" />
                                     <H5>Front End <br /> <InnerHeading className='secondColor'>Development</InnerHeading></H5>
                                 </div>
-                                <P5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</P5>
+                                <P5>Providing expert front-end development services to organizations to help them build a smooth user experience for their consumers.</P5>
                             </div>
                             <div className='serviceCard'>
                                 <div>
                                     <img src={hireDedicated} alt="" width="" height="" />
                                     <H5>Hire Dedicated <br /> <InnerHeading className='secondColor'>Developers</InnerHeading></H5>
                                 </div>
-                                <P5>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam</P5>
+                                <P5>We have a team of development specialists that are committed to providing high-quality service to every customer. Our developers are experts in a variety of technologies and programming languages.</P5>
                             </div>
                         </CardsBox>
                     </div>

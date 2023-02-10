@@ -8,6 +8,9 @@ import trustpilot from "../../assets/logo/trustpilot.webp"
 import dropbox from "../../assets/logo/dropbox.webp"
 import { rootColors } from "../../helpers/constant"
 import { arrowForward } from "../../assets/icons"
+import { layout } from "../../helpers/constant";
+
+const { mobile, tablet, laptop, desktop } = layout
 
 const Hero = styled(Section)`
     position:relative;
@@ -54,16 +57,17 @@ const Overlay = styled.div`
     
     .btnsGroup{
         display:flex;
-        gap:73px;
+        gap:3.6vw;
         margin-bottom:7vw;
 
         button{
             display:flex;
             gap:10px;
             align-items:center;
+            justify-content:center;
 
             img{
-                width:9px;
+                width:7px;
             }
         }
     }
@@ -74,11 +78,42 @@ const Overlay = styled.div`
         grid-template-columns: 1fr 1fr 1fr;
         place-content:center;
         place-items:center;
+        margin-inline:auto;
         gap:10vw;
         img{
             width:100%;
         }
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block:180px 10vw;
+        .content{
+            width: clamp(260px, 85vw , 1000px);
+        }
+        .logoGroup{
+            width: clamp(260px, 85vw , 1200px);
+            gap:5vw;
+        }
+        .btnsGroup{
+            flex-direction:column;
+        }
+    } 
+    @media only screen and (min-width: ${tablet}) {
+        padding-block:18vw 10vw;
+        .content{
+            width: clamp(700px, 55vw , 1000px);
+        }
+        .logoGroup{
+            width: clamp(700px, 65vw , 1200px);
+        }
+        .btnsGroup{
+            flex-direction:initial;
+        }
+
+    } 
+    @media only screen and (min-width: ${laptop}) {
+        padding-block:15vw 10vw;
+    } 
 `
 
 function HeroSection() {
