@@ -4,12 +4,21 @@ import styled from "styled-components"
 import SectionHeader from '../../components/SectionHeader'
 import wroldMap from '../../assets/backgrounds/world_map.webp'
 import Slider from '../../components/Slider'
+import { layout } from '../../helpers/constant'
 
 
-
+const { mobile, tablet, laptop, desktop } = layout
 
 const Content = styled.div`
-    padding-block:3vw;
+     @media only screen and (min-width: ${mobile}) {
+        padding-block:40px;
+    }
+    @media only screen and (min-width: ${tablet}) {
+        padding-block:60px;
+    }
+    @media only screen and (min-width: ${laptop}) {
+        padding-block:3vw;
+    }
 `
 
 

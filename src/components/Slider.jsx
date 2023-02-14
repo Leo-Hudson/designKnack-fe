@@ -35,23 +35,31 @@ const SliderBox = styled.div`
             transform:translateX(5%);
         }
     }
+
+    @media only screen and (min-width: ${mobile}) {
+        .slideBtn{
+            display:none;
+        }
+        
+    } 
+    
+    @media only screen and (min-width: ${tablet }) {
+        .slideBtn{
+            display:initial;
+        }
+    } 
+
 `
 
 const Card = styled.div`
     background:${rootColors.white};
     border-radius:10px;
-    box-shadow:0px .25vw 34px rgba(0, 0, 0, 0.1);
-    margin-inline:40px;
     margin-block:40px;
     position:relative;
-    padding-inline:1.5vw;
     padding-block:3vw 0px;
     display:grid;
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:minmax(23vw, 465px);
     overflow:hidden;
-    gap:1.3vw;
-
+    
     .picture{
         z-index:1;
         width:100%;
@@ -65,14 +73,54 @@ const Card = styled.div`
         right:0px;
         z-index:0;
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        grid-template-rows:minmax(1fr, 100%);
+        box-shadow:0px 10px 20px rgba(0, 0, 0, 0.1);
+        margin-inline:auto;
+        padding-inline:3.5vw;
+        grid-template-columns:1fr;
+        width:clamp(200px, 75vw, 400px);
+        gap:20px;
+        
+        .picture{
+            width:clamp(150px, 70%, 300px);
+            max-height:330px;
+            object-fit:contain;
+            object-position:0px 0px;
+            margin-block:auto;
+        }
 
-    @media only screen and (min-width: ${tablet}) {
-        grid-template-rows:minmax(30vw, 300px);
-
+        .forCardBG{
+            width:85%;
+            transform:rotate(270deg);
+            top:-3vw;
+        }
     } 
     
-    @media only screen and (min-width: ${desktop}) {
+    @media only screen and (min-width: ${"1180px"}) {
+        box-shadow:0px .25vw 34px rgba(0, 0, 0, 0.1);
+        margin-inline:40px;
+        padding-inline:1.5vw;
+        grid-template-columns:1fr 1fr;
         grid-template-rows:minmax(23vw, 400px);
+        width:initial;
+        gap:1.3vw;
+        
+        .picture{
+            width:100%;
+            margin-block:auto 0px;
+            max-height:initial;
+            object-fit:initial;
+            object-position:initial;
+        }
+
+        .forCardBG{
+            width:45%;
+            transform:rotate(0deg);
+            bottom:0px;
+            top:initial;
+        }
 
     } 
     
@@ -80,12 +128,23 @@ const Card = styled.div`
 
 const Indicators = styled.div`
     cursor: pointer;
-    padding: 5px;
     text-align: center;
     border: 1px solid ${rootColors.primary};
     margin:0px 3px;
     font-size:0px;
     border-radius:100px;
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding: 3px;
+        margin:0px 4px;
+        
+    } 
+    
+    @media only screen and (min-width: ${tablet }) {
+        padding: 5px;
+        margin:0px 3px;
+        
+    } 
 
     
 `
@@ -99,23 +158,51 @@ const Content = styled.div`
         width:clamp(30px, 4.5vw, 94px);
         margin-bottom:2vw;
     }
-    h6{
-        color:${rootColors.secondary};
-        margin-bottom:3px;
-    }
     p{
         margin-bottom:2.5vw;
     }
-    .medium{
-        font-family:${fonts.montSerratMedium};
-        margin-bottom:1.3vw;
+    .personInfoBox{
+        h6{
+            color:${rootColors.secondary};
+            margin-bottom:3px;
+        }
+        .medium{
+            font-family:${fonts.montSerratMedium};
+            margin-bottom:1.3vw;
+        }
+        .rating{
+            color:${rootColors.primary};
+        }
+        @media only screen and (min-width: ${mobile}) {
+            display:flex;
+            align-items:center;
+            gap:3vw;
+            .medium{
+                margin-bottom:0px;
+            }
+            .rating{
+                span{
+                    font-size:18px;
+                }
+            }
+        } 
+        
+        @media only screen and (min-width: ${laptop}) {
+            display:initial;
+            .medium{
+                margin-bottom:1.3vw;
+            }
+            .rating{
+                span{
+                    font-size:1.2rem;
+                }
+            }
+        } 
     }
-    .rating{
-        color:${rootColors.primary};
-    }
+
+    
     
 `
-
 
 const slideImages = [
     {
@@ -146,24 +233,24 @@ const slideImages = [
 
 const responsiveSettings = [
     {
-        breakpoint: 800,
+        breakpoint: 900,
         settings: {
             slidesToShow: 2,
             slidesToScroll: 1
         }
     },
     {
-        breakpoint: 500,
+        breakpoint: 220,
         settings: {
-            slidesToShow: 2,
+            slidesToShow: 1,
             slidesToScroll: 1
         }
     }
 ];
 
 const properties = {
-    prevArrow: <PrimaryIconButton className='buttonPrev'><img src={arrowLeft} alt="arrow-foward" width="auto" height="100%" /></PrimaryIconButton>,
-    nextArrow: <PrimaryIconButton className='buttonNext' ><img src={arrowRight} alt="arrow-foward" width="auto" height="100%" /></PrimaryIconButton>
+    prevArrow: <PrimaryIconButton className='slideBtn buttonPrev'><img src={arrowLeft} alt="arrow-foward" width="auto" height="100%" /></PrimaryIconButton>,
+    nextArrow: <PrimaryIconButton className='slideBtn buttonNext' ><img src={arrowRight} alt="arrow-foward" width="auto" height="100%" /></PrimaryIconButton>
 }
 
 const Slider = () => {
@@ -173,7 +260,7 @@ const Slider = () => {
                 {...properties}
                 slidesToScroll={1}
                 slidesToShow={2}
-                easing='cubic'
+                easing='cubic-out'
                 transitionDuration={500}
                 autoplay={false}
                 indicators={(index) => <Indicators className='indicators'>{index + 1}</Indicators>}
@@ -185,9 +272,13 @@ const Slider = () => {
                         <Content className='content'>
                             <img src={quote} alt={slideImage.caption} width="" height="" />
                             <P6>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings</P6>
-                            <H6>Alex John</H6>
-                            <P6 className='medium'>CEO of AirWings</P6>
-                            <Rating className='rating' name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
+                            <div className='personInfoBox'>
+                                <div className='titleBox'>
+                                    <H6>Alex John</H6>
+                                    <P6 className='medium'>CEO of AirWings</P6>
+                                </div>
+                                <Rating className='rating' name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
+                            </div>
                         </Content>
                         <img src={forCardBG} alt="Card Background" className='forCardBG' width="" height="" />
                     </Card>

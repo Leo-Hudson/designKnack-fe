@@ -2,11 +2,14 @@ import {
     BrowserRouter,
     Routes, Route
 } from "react-router-dom";
+import styled from "styled-components";
 
 import Header from "../components/Header";
 import Home from '../screens/Home';
 import Services from "../screens/Services";
 import Footer from "../components/Footer";
+
+
 
 
 export default function Router() {
@@ -40,6 +43,9 @@ export default function Router() {
         <BrowserRouter>
             <div>
                 <Header />
+                {/* <HamburgerMenu>
+                    Hamza
+                </HamburgerMenu> */}
                 {/* {user ? <DashboardHeader /> : <Header />} */}
                 <Routes>
                     <Route path="/" element={<Home />} />

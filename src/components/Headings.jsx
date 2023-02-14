@@ -13,6 +13,13 @@ export const BoxHeading = styled(H6)`
     padding:1vw 2vw;
     color: ${rootColors.primary};
     text-align:center;
+    font-weight:400;
+    @media only screen and (min-width: ${mobile}) {
+        padding:10px 20px;
+    }   
+    @media only screen and (min-width: ${mobile}) {
+        padding:15px 30px;
+    }   
     @media only screen and (min-width: ${desktop}) {
         padding:19px 38px;
     }   

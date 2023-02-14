@@ -97,6 +97,7 @@ const Content = styled.div`
 
     }
 `
+
 const CountBox = styled.div`
     width:100%;
     display:flex;
@@ -130,6 +131,7 @@ const CountBox = styled.div`
             }
         }
     }
+
     @media only screen and (min-width: ${tablet}) {
         width:100%;
         gap:3.3vw 10%;
@@ -155,8 +157,6 @@ const CardsBox = styled.div`
     gap:3vw 10%;
 
     .serviceCard{
-        flex:45%;
-        height:clamp(350px, 22.5vw, 450px);
         border-radius:10px;
         border:1px solid ${rootColors.primary};
         background:${rootColors.white};
@@ -164,7 +164,6 @@ const CardsBox = styled.div`
         padding-block:30px;
         display:flex;
         flex-direction:column;
-        justify-content:flex-end;
         overflow:hidden;
         cursor:pointer;
 
@@ -172,37 +171,15 @@ const CardsBox = styled.div`
             color:${rootColors.secondary};
         }
         
-        img{
-            width:clamp(65px, 6.5vw, 110px);
-            margin-bottom:1.5vw;
-        }
         h5{
             color:${rootColors.primary};
-            margin-bottom:18px;
             
         }
-        
-        p{
-            visibility:hidden;
-            transition:var(--transition03s);
-            opacity:0;
-            margin-bottom:-150px;
-            height:130px;
-        }
-
         &:hover{
             background: ${rootColors.secondary};
             border:1px solid transparent;
             .secondColor{
                 color:${rootColors.white};
-            }
-            p{
-                height:initial;
-                visibility:visible;
-                color:${rootColors.white};
-                margin-bottom:0px;
-                transition:var(--transition03s);
-                opacity:1;
             }
             img{
                 filter:invert(100%) saturate(0%);
@@ -212,42 +189,115 @@ const CardsBox = styled.div`
         
     }   
     @media only screen and (min-width: ${mobile}) {
-        gap:5vw 3vw;
-        width:100%;
+        width:clamp(240px, 100%, 550px);
         margin-inline:auto;
         justify-content:center;
+        gap:5vw;
         .serviceCard{
-            flex:260px;
-            flex-grow:0;
+            flex:100%;
+            justify-content:flex-start;
+            height:auto;
+            div{
+                display:flex;
+                align-items:flex-end;
+                gap:15px;
+                img{
+                    width: clamp(45px, 6.5vw, 70px);
+                    margin-bottom:0px;
+                }
+                h5{
+                    margin-bottom:0px;
+                }
+                margin-bottom:20px;
+            }
+
+            p{
+                visibility:initial;
+                opacity:1;
+                margin-bottom:initial;
+                height:auto; 
+                /* line-height:14px; */
+            }
+             &:hover{
+                 p{
+                    height:auto;
+                    color:${rootColors.white};
+                }
+            }   
         }
     }
     @media only screen and (min-width: ${tablet}) {
-        gap:5vw 4%;
         width:90%;
+        gap:3vw;
+
         .serviceCard{
             flex:42%;
-            flex-grow:0;
-        }
-    }
-    @media only screen and (min-width: ${laptop}) {
-        gap:3vw 10%;
-        width:100%;
-        .serviceCard{
-            flex:45%;
-            flex-grow:initial;
-        }
+            height:clamp(350px, 22.5vw, 400px);
+            justify-content:flex-end;
+            
+            div{
+                display:initial;
+                align-items:flex-end;
+                gap:15px;
+                img{
+                    width: clamp(55px, 5.5vw, 90px);
+                    margin-bottom:1.5vw;
+                }
+                h5{
+                    margin-bottom:18px;
+                }
+                    margin-bottom:0px;
+                }
+            p{
+                visibility:hidden;
+                transition:var(--transition03s);
+                opacity:0;
+                margin-bottom:-150px;
+                height:130px;
+                line-height:17px;
+            }
+
+            &:hover{
+                p{
+                    height:initial;
+                    visibility:visible;
+                    color:${rootColors.white};
+                    margin-bottom:0px;
+                    transition:var(--transition03s);
+                    opacity:1;
+                }
+            }   
         
     }
+    @media only screen and (min-width: ${laptop}) {
+        width:100%;
+        gap:3vw 10%;
+
+        .serviceCard{
+            flex:45%;
+            height:clamp(350px, 22.5vw, 450px);
+            img{
+                width:clamp(65px, 6.5vw, 110px);
+            }
+            p{
+                line-height:20px;
+            }
+            
+        }
+    }
+
     @media only screen and (min-width: ${desktop}) {
         .serviceCard{
             height:clamp(400px, 25vw, 480px);
         }
+        p{
+            line-height:22px;
+        }
     
     }
+}
     
 `
-
-
 
 function OurServices() {
     return (
@@ -284,8 +334,10 @@ function OurServices() {
                     <div>
                         <CardsBox>
                             <div className='serviceCard'>
-                                <img src={webApp} alt="" width="" height="" />
-                                <H5>Web App <br /><InnerHeading className='secondColor'>Development</InnerHeading></H5>
+                                <div>
+                                    <img src={webApp} alt="" width="" height="" />
+                                    <H5>Web App <br /><InnerHeading className='secondColor'>Development</InnerHeading></H5>
+                                </div>
                                 <P5>We help elevate businesses by expanding their digital capability through functional websites that relate with their customers. Our teams are two steps ahead with the client's needs in mind</P5>
                             </div>
                             <div className='serviceCard'>

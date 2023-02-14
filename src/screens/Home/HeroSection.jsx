@@ -35,6 +35,10 @@ const Overlay = styled.div`
     .contentBox{
         display:grid;
         place-content:center;
+        @media only screen and (min-width: ${mobile}) {
+            padding-inline:2px;
+        }
+        
     }
 
     .content{

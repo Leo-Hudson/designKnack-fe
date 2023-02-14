@@ -9,7 +9,9 @@ import { instagram, google, linkedinIn, twitter, facebook, youtube, circleArrow 
 import { fonts, rootColors } from '../../helpers/constant'
 import { NavLink } from 'react-router-dom'
 import { menus } from '../../helpers/constant'
+import { layout } from '../../helpers/constant'
 
+const { mobile, tablet, laptop, desktop } = layout
 
 const Content = styled.div`
     .divider{
@@ -21,26 +23,55 @@ const Content = styled.div`
 `
 
 const UpperBox = styled.div`
-    padding-block:94px 50px;
     display:flex;
     justify-content:left;
     flex-wrap:wrap;
     gap:1.5vw;
-
+    
     div{
         flex:1;
-        min-width:350px;
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block:54px 20px;
+        div{
+            flex:auto;
+            width:clamp(240px, 60%, 350px);
+        }
+        
+    } 
+    
+    @media only screen and (min-width: ${tablet}) {
+        padding-block:74px 40px;
+        div{
+            flex:1;
+            min-width:300px;
+            max-width:400px;
+            width:initial;
+        }
+    } 
+    
+    @media only screen and (min-width: ${laptop}) {
+        padding-block:94px 50px;
+        .link{
+            a{
+                font-size:15px;
+            }
+        }
+        
+    } 
     h5{
         color:${rootColors.primary}
     }
     
 `
+
 const BottomBox = styled.div`
     padding-block:20px;
     display:flex;
     flex:wrap;
     justify-content:space-between;
+    align-items:center;
     gap:50px;
 
     p{
@@ -56,6 +87,37 @@ const BottomBox = styled.div`
             height:auto;
         }
     } 
+
+    @media only screen and (min-width: ${mobile}) {
+        flex-direction:column-reverse;
+        gap:20px;
+        p{
+            margin-inline:0px auto;
+        }        
+        .paymentGateway{
+            margin-inline:0px auto;
+        }
+        
+    } 
+    
+    @media only screen and (min-width: ${tablet}) {
+        flex-direction:initial;
+        .paymentGateway{
+            margin-inline:initial;
+        }
+        p{
+            margin-inline:initial;
+        }        
+        a{
+            font-size:15px;
+        }
+    } 
+        
+    @media only screen and (min-width: ${laptop}) {
+        a{
+            font-size:15px;
+        }
+    } 
     
 `
 
@@ -69,7 +131,7 @@ const Links = styled.ul`
         display:flex;
         align-items:center;
         gap:10px;
-
+        
         img{
             width:15px;
         }
@@ -89,20 +151,32 @@ const Li = styled.li`
     }
     a{  
         color:${rootColors.white};
-        font-size:18px;
         font-family:${fonts.montSerratRegular};
         
     }
-    `
-
+    @media only screen and (min-width: ${mobile}) {
+        a{
+            font-size:13px;
+        }
+        
+    } 
+    
+    @media only screen and (min-width: ${tablet}) {
+        a{
+            font-size:15px;
+        }        
+    } 
+    
+    @media only screen and (min-width: ${laptop}) {
+        a{
+            font-size:18px;
+        }
+    } 
+`
 
 const SubscriberBox = styled.div`
-    max-width:350px;
+    /* max-width:350px; */
     .subscribeNewsletter{
-        
-        h5{
-            margin-bottom:21px;
-        }
         margin-bottom:33px;
     }
     
@@ -113,24 +187,57 @@ const SubscriberBox = styled.div`
         .socialIcons{
             display:flex;
             align-items:center;
-            gap:1vw;
 
             img{
-                width:clamp(25px, 1.5vw, 34px);
                 max-height:26px;
             }
             
         }
     }
+
+    @media only screen and (min-width: ${mobile}) {
+     .subscribeNewsletter{
+        h5{
+            margin-bottom:14px;
+        }
+        }
+        
+        .followUs{
+            .socialIcons{
+                gap:12px;
+                img{
+                    width:clamp(20px, 1.2vw, 26px);
+                }
+                
+            }
+        }   
+    } 
     
-    `
+    @media only screen and (min-width: ${tablet}) {
+        .subscribeNewsletter{
+            h5{
+                margin-bottom:21px;
+            }
+        }
+        
+        .followUs{
+            .socialIcons{
+                gap:1vw;
+                img{
+                    width:clamp(25px, 1.5vw, 36px);
+                }
+                
+            }
+        }   
+    } 
+    
+`
 
 const SubscribeInput = styled.div`
     display:grid;
     grid-template-columns:1.5fr 1fr;
     border:1px solid ${rootColors.white};
     border-radius:27px;
-    min-height:clamp(35px, 2.5vw, 55px);
     
     button{
         width:100%;
@@ -139,18 +246,13 @@ const SubscribeInput = styled.div`
         border:1px solid ${rootColors.white};
         border-radius:inherit;
         display:flex;
-        padding-inline:10px 5px;
-        padding-block:5px;
         justify-content:right;
         align-items:center;
-        gap:5px;
         font-family:${fonts.montSerratMedium};
-        font-size:clamp(14px, 0.8vw, 17px;);
         background:${rootColors.white};
         margin-block:-1px;
         cursor:pointer;        
         img{
-            width:35px;
             height:auto;
         }
     }
@@ -162,9 +264,42 @@ const SubscribeInput = styled.div`
         border-radius:inherit;
         background:transparent;
         font-family:${fonts.montSerratRegular};
-        font-size:14px;
         color:${rootColors.white};
         padding-inline:1.5vw;
+    }
+
+    @media only screen and (min-width: ${mobile}) {
+        min-height:clamp(25px, 2vw, 45px);
+        button{
+            padding-inline:6px 3px;
+            padding-block:3px;
+            gap:3px;
+            font-size:clamp(10px, 0.7vw, 14px);
+            img{
+                width:25px;
+            }
+        }
+        
+        input{
+            font-size:11px;
+        }
+    }
+    @media only screen and (min-width: ${tablet}) {
+        min-height:clamp(35px, 2.5vw, 55px);
+        button{
+            padding-inline:10px 5px;
+            padding-block:5px;
+            gap:5px;
+            font-size:clamp(14px, 0.8vw, 17px);
+            img{
+                width:35px;
+            }
+        }
+        
+        input{
+            font-size:14px;
+        }
+
     }
 
 
@@ -186,13 +321,13 @@ function Footer() {
                             <Links>
                                 {
                                     quickLinks && quickLinks.map(({ name, path }, index) => {
-                                        return <Li key={index + name}>
+                                        return <Li key={index + name} className='link'>
                                             <NavLink to={path} > {name} </NavLink>
                                         </Li>
                                     })
                                 }
                             </Links>
-                        
+
                         </div>
 
                         {/* Services */}
@@ -201,7 +336,7 @@ function Footer() {
                             <Links>
                                 {
                                     services && services.map(({ name, path }, index) => {
-                                        return <Li key={index + name}>
+                                        return <Li key={index + name} className='link'>
                                             <NavLink to={path} > {name} </NavLink>
                                         </Li>
                                     })
@@ -216,7 +351,7 @@ function Footer() {
                                 {
                                     contactUs && contactUs.map(({ name, path, icon }, index) => {
                                         return <Li icon={true} key={index + name} className='contactUsIcons'>
-                                            <img src={icon} alt='' width="" height=""/>
+                                            <img src={icon} alt='' width="" height="" />
                                             <NavLink to={path} key={index}> {name} </NavLink>
                                         </Li>
                                     })

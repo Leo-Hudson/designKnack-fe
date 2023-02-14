@@ -11,7 +11,9 @@ import { arrowForward } from '../../assets/icons'
 import { box3d } from '../../assets/icons'
 import { Label } from '../../components/Inputs'
 import SectionHeader from '../../components/SectionHeader'
+import { layout } from '../../helpers/constant'
 
+const { mobile, tablet, laptop, desktop } = layout
 
 const GetTouchSection = styled(Section)`
     position:relative;
@@ -20,13 +22,28 @@ const GetTouchSection = styled(Section)`
         right:4vw;
         top:3vw;
         z-index:0;
+        @media only screen and (min-width: ${mobile}) {
+            display:none
+        } 
+        
+        @media only screen and (min-width: ${laptop}) {
+            display:initial;
+        } 
     }
 `
 
 const Content = styled.div`
     position:relative;
     z-index:1;
-    padding-block:70px 149px;
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block:10vw;
+        
+    }   
+    @media only screen and (min-width: ${laptop}) {
+        padding-block:70px 149px;
+
+    }  
     
 `
 
@@ -35,12 +52,12 @@ const FormBox = styled.div`
     /* background:cyan; */
     width:100%;
     display:grid;
-    grid-template-columns:1fr 1fr;
     place-items:center;
     gap:50px;
     
     div{
         width:100%;
+        margin-inline:auto;
     }
     .imageBox{
         min-height:100px;
@@ -55,11 +72,27 @@ const FormBox = styled.div`
         box-shadow:0px 0px 40px rgba(0,0,0,0.1);
         border-radius:10px;
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        grid-template-columns:1fr;
+        .form{
+            padding:6vw 4vw;
+
+        }
+        
+    }   
+    @media only screen and (min-width: ${laptop}) {
+        grid-template-columns:1fr 1fr;
+        .form{
+            padding:4vw 3vw;
+        }
+
+    }   
 
 `
 
 const FormRow = styled.div`
-    margin-bottom:30px;
+    margin-bottom:15px;
     button{
         width:100%;
         display:flex;

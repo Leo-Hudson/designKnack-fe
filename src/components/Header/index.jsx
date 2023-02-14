@@ -8,7 +8,6 @@ import { PrimaryButton } from '../Buttons'
 import { P3 } from '../Typography'
 import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube, menuIcon } from '../../assets/icons'
 
-
 const { mobile, tablet, laptop, desktop } = layout
 
 const HeaderSection = styled.div`
@@ -116,7 +115,7 @@ const HeaderSection = styled.div`
         
         a:hover, .active{
           color:${rootColors.secondary};
-          border-bottom:1px solid ${rootColors.secondary};
+          border-bottom:2px solid ${rootColors.secondary};
         }
         
       }
@@ -142,6 +141,24 @@ const HeaderSection = styled.div`
 
   
 `
+
+// const SubMenus = styled.div`
+//   position:relative;
+  
+//   ul{
+//     width:346px;
+//     position:absolute;
+//     background:hotpink;
+//     padding:24px 21px;
+//     display:flex;
+//     flex-direction:column;
+//     gap:26px;
+//     border-bottom:2px solid ${}
+//     /* display:none; */
+
+//   }
+
+// `
 
 function Header() {
   return (
@@ -179,7 +196,17 @@ function Header() {
                 <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
+                {/* <SubMenus>
+                  <a href="">Services</a>
+                  <ul>
+                    <li className='subLink'>Web App Development</li>
+                    <li className='subLink'>Mobile App Development</li>
+                    <li className='subLink'>Front End Development</li>
+                    <li className='subLink'>Hire Dedicated Developers</li>
+                  </ul>
+                </SubMenus> */}
                 <NavLink to={"/services"}>Services</NavLink>
+
               </li>
               <li>
                 <NavLink to={"/how-we-work"}>How We Work</NavLink>

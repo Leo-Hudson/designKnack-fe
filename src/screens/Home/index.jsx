@@ -8,7 +8,6 @@ import Testimonials from './Testimonials'
 import GetInTouch from './GetInTouch'
 import HowWeWork from './HowWeWork'
 
-
 function Home() {
 
     return (

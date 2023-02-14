@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import { fonts, rootColors } from "../helpers/constant";
+import { layout } from "../helpers/constant";
+
+const { mobile, tablet, laptop, desktop} = layout
 
 
 const { poppinsRegular } = fonts
@@ -18,6 +21,26 @@ export const Input = styled.input`
         border-color:${props => props.err ? 'red' : 'var(--paragraphBlack)'};
     }
     
+    @media only screen and (min-width: ${mobile }) {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-block:15px;
+        font-size:14px !important;
+    } 
+    
+    @media only screen and (min-width: ${tablet }) {
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-block:15px;
+        font-size:16px !important;
+    } 
+    
+    @media only screen and (min-width: ${laptop }) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-block:20px;
+        font-size:18px !important;
+    } 
     
 `
 
@@ -35,6 +58,27 @@ export const TextArea = styled.textarea`
     &:hover, &:focus{
         border-color:${props => props.err ? 'red' : 'var(--paragraphBlack)'};
     }
+
+    @media only screen and (min-width: ${mobile}) {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-block:15px;
+        font-size:14px !important;
+    } 
+    
+    @media only screen and (min-width: ${tablet}) {
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-block:15px;
+        font-size:16px !important;
+    } 
+    
+    @media only screen and (min-width: ${laptop }) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-block:20px;
+        font-size:18px !important;
+    } 
     
     
 `
@@ -73,7 +117,19 @@ export const Error = styled.div`
 
 export const Label = styled.label`
     font-family: ${fonts.montSerratSemibold};
-    font-size:20px;
     color:var(--headingBlack);
+    
+    
+    @media only screen and (min-width: ${mobile}) {
+        font-size:14px;
+    } 
+    
+    @media only screen and (min-width: ${tablet}) {
+        font-size:16px;
+    } 
+    
+    @media only screen and (min-width: ${laptop }) {
+        font-size:18px;
+    } 
 
 `

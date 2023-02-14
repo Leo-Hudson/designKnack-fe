@@ -5,43 +5,73 @@ import styled from "styled-components"
 import { PrimaryButton } from '../../components/Buttons'
 import blue_gradient from '../../assets/backgrounds/blue_gradient.jpg'
 import { arrowForward } from '../../assets/icons'
-import { rootColors } from '../../helpers/constant'
+import { layout, rootColors } from '../../helpers/constant'
 
+const { mobile, tablet, laptop, desktop } = layout
 
 const Content = styled.div`
     width:90%;
     max-width:1080px;
     color:white;
     text-align:center;
-    padding-block:86px;
     margin:auto;
     h4{
-        font-size:clamp(28px, 1.5vw, 36px);
         font-weight:400;
-        margin-bottom:15px;
     }
     h2{
-        margin-bottom:26px;
         color:${rootColors.primary};
 
     }
     p{
-        margin-bottom:60px;
         color:${rootColors.white};
-        line-height:2em;
     }
     button{
-        width:clamp(300px, 20.5vw, 414px);
+        width:clamp(200px, 20.5vw, 414px);
         display:flex;
         justify-content:center;
         align-items:center;
         gap:10px;
         margin-inline:auto;
-
+        
         img{
             width:clamp(7px, .5vw, 10px);
         }
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block:46px;
+        h4{
+            font-size:clamp(18px, 1.5vw, 26px);
+            margin-bottom:10px;
+        }
+        h2{
+            margin-bottom:20px;
+        }
+        p{
+            margin-bottom:30px;
+            line-height:1.5em;
+        }
+        button{
+            width:clamp(200px, 20.5vw, 414px);
+        }
+    } 
+    @media only screen and (min-width: ${laptop}) {
+        padding-block:86px;
+        h4{
+            font-size:clamp(28px, 1.5vw, 36px);
+            margin-bottom:15px;
+        }
+        h2{
+            margin-bottom:26px;
+        }
+        p{
+            margin-bottom:60px;
+            line-height:2em;
+        }
+        button{
+            width:clamp(200px, 20.5vw, 414px);
+        }
+    } 
 `
 
 function LetsGotoWork() {

@@ -15,13 +15,22 @@ export const Section = styled.div`
 
 export const ContentBox = styled.div`
     max-width:1600px;
-    padding-inline:40px;
     margin-inline:auto;
-    @media only screen and (max-width: ${laptop}) {
-        padding-inline:30px;
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-inline:10px;
     }
-    @media only screen and (max-width: ${tablet}) {
+    @media only screen and (min-width: ${tablet}) {
         padding-inline:20px;
     }
-
+    @media only screen and (min-width: ${laptop}) {
+        padding-inline:40px;
+    }
+    @media only screen and (min-width: ${desktop}) {
+        padding-inline:40px;
+    }
+    
 `
+
+
+   

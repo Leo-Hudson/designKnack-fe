@@ -3,7 +3,7 @@ import { ContentBox, Section } from "../../components/Banners"
 import { H3 } from "../../components/Typography"
 import styled from "styled-components"
 import { BoxHeading } from '../../components/Headings'
-import { rootColors } from '../../helpers/constant'
+import { layout, rootColors } from '../../helpers/constant'
 import blueTexture from '../../assets/backgrounds/blue_texture.webp'
 import portfolio1 from '../../assets/images/1.webp'
 import portfolio2 from '../../assets/images/2.webp'
@@ -15,19 +15,21 @@ import portfolio7 from '../../assets/images/7.webp'
 import portfolio8 from '../../assets/images/8.webp'
 import portfolio9 from '../../assets/images/9.webp'
 
+const { mobile, tablet, laptop, desktop } = layout
+
+
 const PortfolioSection = styled(Section)`
     display:grid;
     grid-template-rows:75% 1fr;
-    `
+`
 
 const Content = styled.div`
     z-index:1;
     position:relative;
-    padding-block: 116px 54px;
     display:flex;
     flex-direction:column;
     align-items:center;
-
+    
     .boxheading{
         max-width:250px;
         background: rgba(53, 122, 200, 30%);
@@ -39,12 +41,22 @@ const Content = styled.div`
         color: ${rootColors.white};
         margin-bottom: 5vw;
     }    
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block: 50px 54px;
+    }
+    
+    @media only screen and (min-width: ${tablet}) {
+        padding-block: 6vw 54px;
+    }  
+    @media only screen and (min-width: ${desktop}) {
+        padding-block: 116px 54px;
+    }  
 `
 
 const PortFolioImages = styled.div`
     min-height:500px;
     background:${rootColors.white};
-    padding:3.5vw 2.5vw;
     box-shadow:0px 5px 35px rgba(0, 0, 0, 0.102);
     border-radius:15px;
     
@@ -67,8 +79,24 @@ const PortFolioImages = styled.div`
                 transform:scale(1.3);
             }
         }
-
+        
     }
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding:3.5vw 2.5vw;
+        ul{
+            grid-template-columns:1fr 1fr;
+            gap:3.5vw;
+        }
+    }
+    
+    @media only screen and (min-width: ${tablet}) {
+        padding:3.5vw 2.5vw;
+        ul{
+            grid-template-columns:1fr 1fr 1fr;
+            gap:2.5vw;
+        }
+    }  
 
 `
 

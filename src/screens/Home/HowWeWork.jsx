@@ -7,27 +7,40 @@ import { circleItalicLines, dots } from '../../assets/icons'
 import { ideation, design, test, launch, one, two, three, four } from '../../assets/icons'
 import processLine from '../../assets/images/process_line.svg'
 import { H5, P6 } from '../../components/Typography'
-import { rootColors } from '../../helpers/constant'
+import { layout, rootColors } from '../../helpers/constant'
 
+const { mobile, tablet, laptop, desktop } = layout
 
 const HowWeWorkSection = styled(Section)`
     position:relative;
     padding-bottom:220px;
-
+    
     .circleLine{
-        width:clamp(100px, 11vw, 219px);
+      width:clamp(100px, 11vw, 219px);
         position:absolute;
         top:2vw;
         right:4vw;
         z-index:0;
-        
-    }
+      }
     .dots{
-        width:clamp(75px, 5vw, 100px);
-        position:absolute;
-        bottom:9.5vw;
-        left: 4vw;
-        z-index:1;
+      width:clamp(75px, 5vw, 100px);
+      position:absolute;
+      bottom:9.5vw;
+      left: 4vw;
+      z-index:1;
+    }
+    
+    @media only screen and (min-width: ${mobile}) {
+      padding-bottom:90px;
+      .circleLine, .dots{
+        display:none;
+      }
+    }
+    @media only screen and (min-width: ${laptop}) {
+      padding-bottom:220px;
+      .circleLine, .dots{
+        display:initial;
+      }
     }
  
 `
@@ -36,19 +49,27 @@ const Content = styled.div`
     position:relative;
     z-index:2;
     padding-block:4vw;
-`
+    `
 
 const ProcessBox = styled(ContentBox)`
-  width:96%;
   position:relative;
   padding:0px;
   margin-inline:auto;
   min-height:500px;
-  z-index:3;
-
-  .processLine{
-    /* position:absolute; */
-  }
+  z-index:3;  
+  
+  @media only screen and (min-width: ${mobile}) {
+    width:100%;
+    .processLine{
+      display:none;
+    }
+  }  
+  @media only screen and (min-width: ${laptop}) {
+    width:96%;
+    .processLine{
+      display:initial;
+    }
+  }  
 `
 
 const ProcessCards = styled.div`
@@ -68,27 +89,17 @@ const ProcessCards = styled.div`
     
     .number{
       position:absolute;
-      width:clamp(35px, 3vw, 60px);
-      right:1vw;
-      top:1vw;
     }
     
     div{
-      img{
-        width:clamp(75px, 5vw, 103px);
-        margin-bottom:27px;
-        
-      }
       h5{
-        margin-bottom:20px;
         color:${rootColors.primary};
       }
       p{
-        line-height:25px;
         transition:var(--transition03s);
       }
     }
-
+    
     &:hover{
       background:${rootColors.secondary};
       transition:var(--transition03s);
@@ -101,21 +112,81 @@ const ProcessCards = styled.div`
     }
     
   }
+  
+  @media only screen and (min-width: ${mobile}) {
+    grid-template-columns:1fr;
+    padding-inline:20px;
+    .card{
+      min-height:initial;
+      max-width:initial;
+      padding:3.5vw 3vw;
+      
+      .number{
+        width:initial;
+        height:clamp(45px, 4vw, 80px);
+        right:2vw;
+        top:2vw;
+      }
+      
+      div{
+        img{
+          margin-bottom:10px;
+          width:clamp(55px, 8vw, 70px);
+          
+        }
+        h5{
+          margin-bottom:12px;
+        }
+        p{
+          line-height:18px;
+        }
+      }
+      .one, .two, .three, .four{
+        transform:initial;
+      }
+    }
+  } 
+  
+  @media only screen and (min-width: ${tablet}) {
+      grid-template-columns:1fr 1fr;
+      
+    } 
+    
+  @media only screen and (min-width: ${laptop}) {
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    padding-inline:20px;
 
-  .one{
-    transform:translateY(-280px);
-  }
-  .two{
-    transform:translateY(-140px);
-  }
-  .three{
-    transform:translateY(10px);
-  }
-  .four{
-    transform:translateY(90px);
-  }
+    .card{
+      min-height:286px;
+      max-width:386px;
+      padding:2.5vw 2vw;
+      
+      .number{
+        width:clamp(35px, 3vw, 60px);
+        height:initial;
+        right:1vw;
+        top:1vw;
+      }
+      
+      div{
+        img{
+          width:clamp(75px, 5vw, 103px);
+          margin-bottom:27px;
 
-  @media (max-width: 1368px) {
+        }
+        h5{
+          margin-bottom:20px;
+        }
+        p{
+          line-height:25px;
+        }
+      }
+    
+      .one, .two, .three, .four{
+        transform:initial;
+      }
+    }
+
     .one{
       transform:translateY(-200px);
     }
@@ -128,26 +199,27 @@ const ProcessCards = styled.div`
     .four{
       transform:translateY(60px);
     }
-  }
-
-  @media (max-width: 1001px) {
+  } 
+  
+  @media only screen and (min-width: ${desktop}) {
     .one{
-      transform:translateY(-160px);
+      transform:translateY(-280px);
     }
     .two{
-      transform:translateY(-80px);
+      transform:translateY(-140px);
     }
     .three{
-      transform:translateY(0px);
+      transform:translateY(10px);
     }
     .four{
-      transform:translateY(50px);
+      transform:translateY(90px);
     }
-  }
 
+  }
+  
 `
 
-function  HowWeWork() {
+function HowWeWork() {
   return (
     <HowWeWorkSection bgImage={squareBoxes}>
       <img src={circleItalicLines} alt="" className='circleLine' width="" height="" />
@@ -176,7 +248,7 @@ function  HowWeWork() {
         <img src={processLine} alt="processLine" className='processLine' width="100%" height="auto" />
         <ProcessCards>
           <div className='card one'>
-            <img src={one} alt="" className='number' width="" height=""/>
+            <img src={one} alt="" className='number' width="" height="" />
             <div>
               <img src={ideation} alt="" width="" height="" />
               <H5>Ideation & Plan</H5>

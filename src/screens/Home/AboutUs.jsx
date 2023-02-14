@@ -3,11 +3,13 @@ import { ContentBox, Section } from "../../components/Banners"
 import { H4, P4, P5 } from "../../components/Typography"
 import styled from "styled-components"
 import SectionHeader from '../../components/SectionHeader'
-import { rootColors } from '../../helpers/constant'
+import { layout, rootColors } from '../../helpers/constant'
 import { Rating } from '@mui/material'
 import { draftbit, feedly, hellosign, krisp, mapbox, pendo, people_ai, } from '../../assets/logo/brands'
 import { PrimaryButton } from '../../components/Buttons'
 import { arrowForward, waves, circles } from '../../assets/icons'
+
+const { mobile, tablet, laptop, desktop } = layout
 
 const About = styled(Section)`
     position:relative;
@@ -33,16 +35,26 @@ const About = styled(Section)`
 const Content = styled.div`
     position:relative;
     width:100%;
-    padding-block:80px 140px;
     z-index:2;
+    
+    @media only screen and (min-width: ${mobile}) {
+        padding-block:80px;
+    } 
+    @media only screen and (min-width: ${tablet}) {
+        padding-block:80px 140px;
+    } 
+   
     
 `
 
 const BrandsBox = styled.div`
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    place-items:center;
-    gap:50px;
+    gap:35px;
+    @media only screen and (min-width: ${laptop}) {
+        grid-template-columns: 1fr 1fr;
+        place-items:center;
+        gap:50px
+    } 
 `
 
 const BrandsImage = styled.div`
@@ -52,7 +64,6 @@ const BrandsImage = styled.div`
         display:grid;
         grid-template-columns:1fr 1fr 1fr;
         place-items:center;
-        gap:30px;
 
         li{
             padding:15px 30px;
@@ -74,6 +85,38 @@ const BrandsImage = styled.div`
             /* margin-block:-50px; */
         }
     }
+
+    @media only screen and (min-width: ${mobile}) {
+        ul{
+            max-width:500px;            
+            margin-inline:auto;
+            gap:20px;
+            li{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                padding:8px 10px;
+                img{
+                    width:80%;
+                }
+            }
+        }
+    }   
+    @media only screen and (min-width: ${laptop}) {
+        ul{
+            max-width:initial;            
+            margin-inline:auto;
+            gap:30px;
+            li{
+                display:initial;
+                padding:.75vw 1.5vw ;
+                img{
+                    width:100%;
+                }
+            }
+        }
+
+    }   
 `
 
 const BrandsContent = styled.div`
@@ -105,6 +148,20 @@ const BrandsContent = styled.div`
         img{
             width:clamp(7px, .5vw, 10px);
         }
+        @media only screen and (min-width: ${mobile}) {
+            width:clamp(200px, 10.5vw, 414px);
+        } 
+        
+        @media only screen and (min-width: ${tablet }) {
+            width:clamp(300px, 20.5vw, 414px);
+        } 
+    }
+    
+    @media only screen and (min-width: ${laptop}) {
+        max-width:initial;
+    }
+    @media only screen and (min-width: ${tablet}) {
+        max-width:750px;
     }
 
 `
