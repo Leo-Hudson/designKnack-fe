@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import Home from '../screens/Home';
 import Services from "../screens/Services";
+import ContactUs from "../screens/ContactUs";
 import Footer from "../components/Footer";
 
 
@@ -51,7 +52,7 @@ export default function Router() {
                     <Route path="/" element={<Home />} />
                     <Route path="/services" element={<Services name="Services" />} />
                     <Route path="/how-we-work" element={<Services name="How We Work" />} />
-                    <Route path="/contact-us" element={<Services name="Contact Us" />} />
+                    <Route path="/contact-us" element={<ContactUs/>} />
                     <Route path="/get-quote" element={<Services name="Get a Quote" />} />
                     <Route path="/web-app-development" element={<Services name="Web App Development" />} />
                     <Route path="/mobile-app-development" element={<Services name="Mobile App Development" />} />

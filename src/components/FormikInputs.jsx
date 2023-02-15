@@ -82,14 +82,20 @@ const TextFieldInput = ({ ...props }) => {
     )
 }
 
-const TextAreaField = ({ ...props }) => {
+const TextAreaField = ({ label, ...props }) => {
+    const [field, meta] = useField(props);
 
     return (
         <Ipt>
+            <Label htmlFor={props.id}>{label}</Label>
             <TextArea
+                err={meta.touched && meta.error}
+                {...field}
                 {...props}
             />
+            <ErrorMessage component={Error} name={field.name} className="error" />
         </Ipt>
+
     )
 }
 

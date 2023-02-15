@@ -30,6 +30,7 @@ import quote from './quote.svg'
 import arrowLeft from './arrow-left.svg'
 import arrowRight from './arrow-right.svg'
 import menuIcon from './menu_icon.svg'
+import loader from './loader.gif'
 import ideation from './Process/Ideation.svg'
 import design from './Process/Design.svg'
 import test from './Process/Test.svg'
@@ -71,6 +72,7 @@ export {
     arrowLeft,
     arrowRight,
     menuIcon,
+    loader,
     ideation,
     design,
     test,
@@ -79,6 +81,6 @@ export {
     two,
     three,
     four,
-    quote
+    quote,
 
 }

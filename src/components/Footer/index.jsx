@@ -11,6 +11,8 @@ import { NavLink } from 'react-router-dom'
 import { menus } from '../../helpers/constant'
 import { layout } from '../../helpers/constant'
 
+
+
 const { mobile, tablet, laptop, desktop } = layout
 
 const Content = styled.div`
@@ -306,6 +308,7 @@ const SubscribeInput = styled.div`
 `
 
 function Footer() {
+    
     const [quickLinks, setQuickLinks] = useState(menus.quickLinks)
     const [services, setServices] = useState(menus.services)
     const [contactUs, setContactUs] = useState(menus.contactUs)
