@@ -111,10 +111,10 @@ function GetInTouch() {
 
     const sendEmail = () => {
         return emailjs.sendForm(
-            'service_ezh9ixc',
-            'template_50hnz9v',
+            'service_0mqtqsn',
+            'template_gj6avt8',
             form.current,
-            '3CoI6KtxguOBGdDOD'
+            '4vY2-Nh1lxu8zUwBt'
         ).then((result) => {
             console.log(result.text);
             return true

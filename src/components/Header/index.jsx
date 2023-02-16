@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { fonts, layout, rootColors } from '../../helpers/constant'
@@ -55,6 +55,7 @@ const HeaderSection = styled.div`
         }
       }
     }
+    
     @media only screen and (min-width: ${mobile}) {
       .topContent{
         .leftSide div p{
@@ -106,11 +107,21 @@ const HeaderSection = styled.div`
         gap: 2.5vw;
         font-family:${fonts.montSerratMedium};
         font-size:clamp(16px, 1.2vw, 20px);
+        span{
+            cursor:pointer;
+            padding-bottom:5px;
+            border-bottom:2px solid transparent;
+
+        }
+        span:hover{
+          color:${rootColors.secondary};
+          border-bottom:2px solid ${rootColors.secondary};
+        }
 
         a{
           color:${rootColors.headingBlack};
           padding-bottom:5px;
-          border-bottom:1px solid transparent;
+          border-bottom:2px solid transparent;
         }
         
         a:hover, .active{
@@ -142,25 +153,36 @@ const HeaderSection = styled.div`
   
 `
 
-// const SubMenus = styled.div`
-//   position:relative;
-  
-//   ul{
-//     width:346px;
-//     position:absolute;
-//     background:hotpink;
-//     padding:24px 21px;
-//     display:flex;
-//     flex-direction:column;
-//     gap:26px;
-//     border-bottom:2px solid ${}
-//     /* display:none; */
+const SubMenus = styled.ul`
+    width:286px;
+    position:absolute;
+    padding:15px 13px;
+    background:${rootColors.white};
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    margin-top:10px;
+    border-bottom:8px solid ${rootColors.secondary};
+    /* display:none; */
+    
 
-//   }
-
-// `
-
+    a{
+      font-size:clamp(14px, .8vw, 18px);
+      color:${rootColors.headingBlack};
+      padding-bottom:5px;
+      /* border-bottom:2px solid transparent; */
+    }
+        
+    a:hover, .active{
+      color:${rootColors.secondary};
+      /* border-bottom:2px solid ${rootColors.secondary}; */
+    }
+`
 function Header() {
+  
+  const [isService, setService] = useState(false)
+
   return (
     <HeaderSection>
       <nav>
@@ -196,16 +218,24 @@ function Header() {
                 <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
-                {/* <SubMenus>
-                  <a href="">Services</a>
-                  <ul>
-                    <li className='subLink'>Web App Development</li>
-                    <li className='subLink'>Mobile App Development</li>
-                    <li className='subLink'>Front End Development</li>
-                    <li className='subLink'>Hire Dedicated Developers</li>
-                  </ul>
-                </SubMenus> */}
-                <NavLink to={"/services"}>Services</NavLink>
+                <span onClick={() => setService(!isService)}>Services</span>
+                {
+                  isService && <SubMenus>
+                    <li className='subLink' onClick={() => setService(!isService)}>
+                      <NavLink to='/web-app-development'>Web App Development</NavLink>
+                    </li>
+                    <li className='subLink' onClick={() => setService(!isService)}>
+                      <NavLink to='/mobile-app-development'>Mobile App Development</NavLink>
+                    </li>
+                    <li className='subLink' onClick={() => setService(!isService)}>
+                      <NavLink to='/front-end-development'>Front End Development</NavLink>
+                    </li>
+                    <li className='subLink' onClick={() => setService(!isService)}>
+                      <NavLink to='/hire-dedicated-developers'>Hire Dedicated Developers</NavLink>
+                    </li>
+                  </SubMenus>
+                }
+                {/* <NavLink to={"/services"}>Services</NavLink> */}
 
               </li>
               <li>

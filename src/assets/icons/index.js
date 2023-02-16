@@ -31,6 +31,7 @@ import arrowLeft from './arrow-left.svg'
 import arrowRight from './arrow-right.svg'
 import menuIcon from './menu_icon.svg'
 import loader from './loader.gif'
+import dots2 from './dots2.svg'
 import ideation from './Process/Ideation.svg'
 import design from './Process/Design.svg'
 import test from './Process/Test.svg'
@@ -73,6 +74,7 @@ export {
     arrowRight,
     menuIcon,
     loader,
+    dots2,
     ideation,
     design,
     test,
