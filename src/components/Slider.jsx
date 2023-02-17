@@ -87,7 +87,8 @@ const Card = styled.div`
             width:clamp(150px, 70%, 300px);
             max-height:330px;
             object-fit:contain;
-            object-position:0px 0px;
+            object-position:center;
+            margin-inline:auto;
             margin-block:auto;
         }
 
@@ -177,6 +178,7 @@ const Content = styled.div`
             display:flex;
             align-items:center;
             gap:3vw;
+            margin-bottom:15px;
             .medium{
                 margin-bottom:0px;
             }
@@ -189,6 +191,7 @@ const Content = styled.div`
         
         @media only screen and (min-width: ${laptop}) {
             display:initial;
+            margin-bottom:20px;
             .medium{
                 margin-bottom:1.3vw;
             }
@@ -199,8 +202,6 @@ const Content = styled.div`
             }
         } 
     }
-
-    
     
 `
 

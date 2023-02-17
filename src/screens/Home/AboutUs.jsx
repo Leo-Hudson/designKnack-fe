@@ -13,6 +13,7 @@ const { mobile, tablet, laptop, desktop } = layout
 
 const About = styled(Section)`
     position:relative;
+    z-index:0;
 
     .waves{
         width:clamp(120px, 19vw, 180px);

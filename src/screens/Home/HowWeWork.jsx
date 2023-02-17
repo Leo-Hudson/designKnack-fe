@@ -14,6 +14,7 @@ const { mobile, tablet, laptop, desktop } = layout
 const HowWeWorkSection = styled(Section)`
     position:relative;
     padding-bottom:220px;
+    z-index:0;
     
     .circleLine{
       width:clamp(100px, 11vw, 219px);

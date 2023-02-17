@@ -12,6 +12,7 @@ const { mobile, tablet, laptop, desktop } = layout
 
 const Services = styled(Section)`
     position:relative;
+    z-index:0;
 
     .triangles{
         width:clamp(40px, 14vw, 152px);
