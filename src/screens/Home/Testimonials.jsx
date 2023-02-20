@@ -7,7 +7,7 @@ import Slider from '../../components/Slider'
 import { layout } from '../../helpers/constant'
 
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, laptop } = layout
 
 const Content = styled.div`
      @media only screen and (min-width: ${mobile}) {
@@ -43,7 +43,7 @@ function Testimonials() {
                     />
                     <div>
                         <Slider />
-                    </div>    
+                    </div>
                 </Content>
 
             </ContentBox>

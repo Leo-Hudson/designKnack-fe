@@ -9,7 +9,7 @@ import { draftbit, feedly, hellosign, krisp, mapbox, pendo, people_ai, } from '.
 import { PrimaryButton } from '../../components/Buttons'
 import { arrowForward, waves, circles } from '../../assets/icons'
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, laptop } = layout
 
 const About = styled(Section)`
     position:relative;
@@ -153,7 +153,7 @@ const BrandsContent = styled.div`
             width:clamp(200px, 10.5vw, 414px);
         } 
         
-        @media only screen and (min-width: ${tablet }) {
+        @media only screen and (min-width: ${tablet}) {
             width:clamp(300px, 20.5vw, 414px);
         } 
     }
@@ -219,11 +219,11 @@ function AboutUs() {
                                 <P5>Trusted By 1,000+ Clients</P5>
                                 <Rating className='rating' name="half-rating-read" defaultValue={4} precision={0.5} readOnly />
                             </div>
-                                <H4>We are Blessed to Work With Leading Brands</H4>
-                                <P4 className='p4'>We are grateful for the opportunity to collaborate with these respected and well-known brands, and we look forward to building long-term relationships with you as well. We are confident that our partnership will bring value to your Business</P4>
-                                <PrimaryButton>
-                                    GET A QUOTE <img src={arrowForward} alt='arrow_forward' width="" height="" />
-                                </PrimaryButton>
+                            <H4>We are Blessed to Work With Leading Brands</H4>
+                            <P4 className='p4'>We are grateful for the opportunity to collaborate with these respected and well-known brands, and we look forward to building long-term relationships with you as well. We are confident that our partnership will bring value to your Business</P4>
+                            <PrimaryButton>
+                                GET A QUOTE <img src={arrowForward} alt='arrow_forward' width="" height="" />
+                            </PrimaryButton>
                         </BrandsContent>
                     </BrandsBox>
 

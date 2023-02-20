@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { fonts, layout, rootColors } from '../../helpers/constant'
@@ -8,7 +8,7 @@ import { PrimaryButton } from '../Buttons'
 import { P3 } from '../Typography'
 import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube, menuIcon } from '../../assets/icons'
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet } = layout
 
 const HeaderSection = styled.div`
   min-height:14px;
@@ -117,7 +117,7 @@ const Bottom = styled.div`
     }
   `
 
-  const Menu = styled.ul`
+const Menu = styled.ul`
     width:100%;
     display:flex;
     justify-content:right;
@@ -159,14 +159,14 @@ const Bottom = styled.div`
       flex-direction:column;
       /* align-items:flex-end; */
       margin-top:45px;
-      right:${({isMenuOpen}) => isMenuOpen ? '0%' : '-100%'};
+      right:${({ isMenuOpen }) => isMenuOpen ? '0%' : '-100%'};
       padding-inline:0px 20px;
       padding-block:10vh;
-      animation-name:${({ isMenuOpen }) => { 
-      return isMenuOpen === true ? 'slideIn' 
-        : isMenuOpen === false ? 'slideOut'
-          : "";
-      }};
+      animation-name:${({ isMenuOpen }) => {
+    return isMenuOpen === true ? 'slideIn'
+      : isMenuOpen === false ? 'slideOut'
+        : "";
+  }};
       animation-duration:.5s;
       animation-timing-function: ease-out;
 
@@ -236,12 +236,12 @@ const SubMenus = styled.ul`
     }
 `
 function Header() {
-  
+
   const [isService, setService] = useState(false)
   const [isOpen, setIsOpen] = useState("")
 
   const setDefault = (dt) => {
-    dt === 'desktop' ? setService(false) : setService(!isService) ;
+    dt === 'desktop' ? setService(false) : setService(!isService);
     isOpen && setIsOpen(false);
 
   }
@@ -254,11 +254,11 @@ function Header() {
             <div className='leftSide'>
               <div>
                 <img src={primaryPhone} alt="" width="" height="" />
-                <P3><a href="">123-456-7890</a></P3>
+                <P3><a href="tel:+123-456-7890">123-456-7890</a></P3>
               </div>
               <div>
                 <img src={primaryMail} alt="" width="" height="" />
-                <P3><a href="">info@designknacks.com</a></P3>
+                <P3><a href="mailto:info@designknacks.com">info@designknacks.com</a></P3>
               </div>
             </div>
             <div className='rightSide'>

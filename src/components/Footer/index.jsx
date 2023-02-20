@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ContentBox, Section } from "../../components/Banners"
 import { H5, P3 } from "../../components/Typography"
 import styled from "styled-components"
@@ -13,7 +13,7 @@ import { layout } from '../../helpers/constant'
 
 
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, laptop } = layout
 
 const Content = styled.div`
     .divider{
@@ -308,10 +308,10 @@ const SubscribeInput = styled.div`
 `
 
 function Footer() {
-    
-    const [quickLinks, setQuickLinks] = useState(menus.quickLinks)
-    const [services, setServices] = useState(menus.services)
-    const [contactUs, setContactUs] = useState(menus.contactUs)
+
+    const quickLinks = menus.quickLinks;
+    const services = menus.services;
+    const contactUs = menus.contactUs;
 
     return (
         <Section bgImage={blue_gradient}>

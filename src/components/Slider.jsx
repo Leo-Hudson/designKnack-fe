@@ -12,7 +12,7 @@ import { fonts, rootColors } from '../helpers/constant';
 import { PrimaryIconButton } from './Buttons';
 import { layout } from "../helpers/constant";
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, laptop } = layout
 
 const SliderBox = styled.div`
 
@@ -43,7 +43,7 @@ const SliderBox = styled.div`
         
     } 
     
-    @media only screen and (min-width: ${tablet }) {
+    @media only screen and (min-width: ${tablet}) {
         .slideBtn{
             display:initial;
         }
@@ -141,7 +141,7 @@ const Indicators = styled.div`
         
     } 
     
-    @media only screen and (min-width: ${tablet }) {
+    @media only screen and (min-width: ${tablet}) {
         padding: 5px;
         margin:0px 3px;
         

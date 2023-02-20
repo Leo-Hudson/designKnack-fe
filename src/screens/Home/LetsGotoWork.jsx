@@ -7,7 +7,7 @@ import blue_gradient from '../../assets/backgrounds/blue_gradient.jpg'
 import { arrowForward } from '../../assets/icons'
 import { layout, rootColors } from '../../helpers/constant'
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, laptop } = layout
 
 const Content = styled.div`
     width:90%;

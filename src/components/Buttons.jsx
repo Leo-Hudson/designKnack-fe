@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { fonts, rootColors } from "../helpers/constant";
 import { layout } from "../helpers/constant";
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, desktop } = layout
 
 const Button = styled.button`
     border:none;

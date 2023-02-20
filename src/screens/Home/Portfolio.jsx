@@ -15,7 +15,7 @@ import portfolio7 from '../../assets/images/7.webp'
 import portfolio8 from '../../assets/images/8.webp'
 import portfolio9 from '../../assets/images/9.webp'
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, desktop } = layout
 
 
 const PortfolioSection = styled(Section)`

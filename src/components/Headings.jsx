@@ -3,7 +3,7 @@ import { H6 } from "./Typography";
 import { fonts, rootColors } from "../helpers/constant";
 import { layout } from "../helpers/constant";
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, desktop } = layout
 
 
 export const BoxHeading = styled(H6)`
@@ -26,5 +26,5 @@ export const BoxHeading = styled(H6)`
 `
 
 export const InnerHeading = styled.span`
-    color: ${({color}) => color ? color : rootColors.primary};
+    color: ${({ color }) => color ? color : rootColors.primary};
 `

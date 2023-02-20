@@ -10,7 +10,7 @@ import { rootColors } from "../../helpers/constant"
 import { arrowForward } from "../../assets/icons"
 import { layout } from "../../helpers/constant";
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, tablet, laptop } = layout
 
 const Hero = styled(Section)`
     position:relative;
@@ -132,7 +132,7 @@ function HeroSection() {
                         <div className="btnsGroup">
                             <PrimaryButton>
                                 <span>HAVE AN IDEA, LET'S TALK</span>
-                                <img src={arrowForward} alt="" width="" height=""/>
+                                <img src={arrowForward} alt="" width="" height="" />
                             </PrimaryButton>
                             <SimpleButton>GET A QUOTE</SimpleButton>
                         </div>

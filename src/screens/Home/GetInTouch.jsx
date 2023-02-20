@@ -9,12 +9,12 @@ import emailjs from '@emailjs/browser';
 import { PrimaryButton } from '../../components/Buttons'
 import { arrowForward, loader } from '../../assets/icons'
 import { box3d } from '../../assets/icons'
-import { Label } from '../../components/Inputs'
+// import { Label } from '../../components/Inputs'
 import SectionHeader from '../../components/SectionHeader'
 import { layout } from '../../helpers/constant'
 import { P5 } from '../../components/Typography'
 
-const { mobile, tablet, laptop, desktop } = layout
+const { mobile, laptop } = layout
 
 const GetTouchSection = styled(Section)`
     position:relative;
@@ -164,66 +164,66 @@ function GetInTouch() {
                                     formik.resetForm()
                                 }}
                             >
-                            {formik => (
+                                {formik => (
 
-                                <div className='form'>
-                                    <Form autoComplete="off" ref={form} > {/*Formik Form Import from Formik*/}
+                                    <div className='form'>
+                                        <Form autoComplete="off" ref={form} > {/*Formik Form Import from Formik*/}
 
-                                        <FormRow>
-                                            <FieldInput
-                                                label="Full Name*"
-                                                id="fullName" autofill name="fullName" type="text"
-                                                placeholder="Enter your Full Name"
-                                                required
-                                                style={{ fontSize: '20px' }}
-                                            />
-                                        </FormRow>
-                                        <FormRow>
-                                            <FieldInput
-                                                label="Email Address*"
-                                                id="email" autofill name="email" type="email"
-                                                placeholder="Enter your Email"
-                                                required
-                                                style={{ fontSize: '20px' }}
-                                            />
-                                        </FormRow>
-                                        <FormRow>
-                                            <FieldInput
-                                                label="Phone No*"
-                                                id="phoneNo" autofill name="phoneNo" type="text"
-                                                placeholder="Enter your Phone No"
-                                                required
-                                                style={{ fontSize: '20px' }}
-                                            />
-                                        </FormRow>
-                                        <FormRow>
-                                            {/* <Label htmlFor='aboutProject'>Tell us about your project*</Label> */}
-                                            <TextAreaField
-                                                label="Tell us about your project*"
-                                                id="aboutProject" name="aboutProject" placeholder="Discuss your business/idea..."
-                                                required rows='5'
-                                                style={{ fontSize: '20px', marginTop: '4px' }}
-                                            />
-                                        </FormRow>
-                                        <FormRow>
-                                            <PrimaryButton type="submit" disabled={loading}>
-                                                <span>SUBMIT</span>
-                                                <img src={loading ? loader : arrowForward} alt="" width={loading ? '15px' : '7px'} />
-                                            </PrimaryButton>
-                                        </FormRow>
-                                        <FormRow>
-                                            <P5>{mesg}</P5>
-                                        </FormRow>
-                                    </Form>
-                                </div>
-                            )}
-                        </Formik >
+                                            <FormRow>
+                                                <FieldInput
+                                                    label="Full Name*"
+                                                    id="fullName" autofill name="fullName" type="text"
+                                                    placeholder="Enter your Full Name"
+                                                    required
+                                                    style={{ fontSize: '20px' }}
+                                                />
+                                            </FormRow>
+                                            <FormRow>
+                                                <FieldInput
+                                                    label="Email Address*"
+                                                    id="email" autofill name="email" type="email"
+                                                    placeholder="Enter your Email"
+                                                    required
+                                                    style={{ fontSize: '20px' }}
+                                                />
+                                            </FormRow>
+                                            <FormRow>
+                                                <FieldInput
+                                                    label="Phone No*"
+                                                    id="phoneNo" autofill name="phoneNo" type="text"
+                                                    placeholder="Enter your Phone No"
+                                                    required
+                                                    style={{ fontSize: '20px' }}
+                                                />
+                                            </FormRow>
+                                            <FormRow>
+                                                {/* <Label htmlFor='aboutProject'>Tell us about your project*</Label> */}
+                                                <TextAreaField
+                                                    label="Tell us about your project*"
+                                                    id="aboutProject" name="aboutProject" placeholder="Discuss your business/idea..."
+                                                    required rows='5'
+                                                    style={{ fontSize: '20px', marginTop: '4px' }}
+                                                />
+                                            </FormRow>
+                                            <FormRow>
+                                                <PrimaryButton type="submit" disabled={loading}>
+                                                    <span>SUBMIT</span>
+                                                    <img src={loading ? loader : arrowForward} alt="" width={loading ? '15px' : '7px'} />
+                                                </PrimaryButton>
+                                            </FormRow>
+                                            <FormRow>
+                                                <P5>{mesg}</P5>
+                                            </FormRow>
+                                        </Form>
+                                    </div>
+                                )}
+                            </Formik >
 
 
-                    </div>
-                </FormBox>
-            </Content>
-        </ContentBox>
+                        </div>
+                    </FormBox>
+                </Content>
+            </ContentBox>
         </GetTouchSection >
     )
 }
