@@ -227,7 +227,7 @@ function HowWeWork() {
       <img src={dots} alt="" className='dots' width="" height="" />
       {/* Content Box */}
       <ContentBox>
-        <Content>
+        <Content id='work'>
           <SectionHeader
             mainHeading="HOW WE WORK"
             heading="Our Working "

@@ -1,12 +1,15 @@
 // You can set the constant variables here.
-import { primaryPhone, primaryMail, primaryLocation } from "../assets/icons"
+import {
+    primaryPhone, primaryMail,
+    //  primaryLocation
+} from "../assets/icons"
 
 export const fonts = {
-    clashDisplayMedium: "ClashDisplayMedium", 
-    clashDisplaySemibold : "ClashDisplaySemibold", 
-    montSerratRegular : "MontSerratRegular", 
-    montSerratMedium : "MontSerratMedium", 
-    montSerratSemibold : "MontSerratSemibold", 
+    clashDisplayMedium: "ClashDisplayMedium",
+    clashDisplaySemibold: "ClashDisplaySemibold",
+    montSerratRegular: "MontSerratRegular",
+    montSerratMedium: "MontSerratMedium",
+    montSerratSemibold: "MontSerratSemibold",
 }
 
 export const rootColors = {
@@ -18,7 +21,7 @@ export const rootColors = {
     headingBlack: "var(--headingBlack)",
     grey: "var(--grey)",
     white: "var(--white)",
-  
+
 }
 
 export const layout = {
@@ -29,55 +32,56 @@ export const layout = {
 }
 
 export const menus = {
-    quickLinks:[
+    quickLinks: [
         {
-            name:"Home",
-            path:"/"
+            name: "Home",
+            path: "/"
         },
         {
-            name:"How We Work",
-            path:"/how-we-work"
+            name: "How We Work",
+            path: "/how-we-work",
+            anchor: "#work"
         },
         {
-            name:"Contact Us",
-            path:"/contact-us"
+            name: "Contact Us",
+            path: "/contact-us"
         },
         {
             name: "Get a Quote",
             path: "/get-quote"
         }
     ],
-    services:[
+    services: [
         {
-            name:"Web App Development",
-            path:"/web-app-development"
+            name: "Web App Development",
+            path: "/web-app-development"
         },
         {
-            name:"Mobile App Development",
-            path:"/mobile-app-development"
+            name: "Mobile App Development",
+            path: "/mobile-app-development"
         },
         {
-            name:"Front End Development",
-            path:"/front-end-development"
+            name: "Front End Development",
+            path: "/front-end-development"
         },
         {
-            name:"Hire Dedicated Developers",
-            path:"/hire-dedicated-developers"
+            name: "Hire Dedicated Developers",
+            path: "/hire-dedicated-developers"
         }
     ],
-    contactUs:[
+    contactUs: [
+        // {
+        //     name:"9550 S. Eastern Ave, Suite 237 Las Vegas, Nevada 89123",
+        //     path: "/",
+        //     icon: primaryLocation
+        // },
         {
-            name:"9550 S. Eastern Ave, Suite 237 Las Vegas, Nevada 89123",
-            path: "/",
-            icon: primaryLocation
-        },
-        {
-            name:"info@designknack@gmail.com",
+            name: "info@designsknack.com",
             path: "/",
             icon: primaryMail
         },
         {
-            name:"123-456-7890",
+            name: "123-456-7890",
             path: "/",
             icon: primaryPhone
         }

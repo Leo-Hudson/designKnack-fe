@@ -4,13 +4,17 @@ import { H5, P3 } from "../../components/Typography"
 import styled from "styled-components"
 import blue_gradient from '../../assets/backgrounds/blue_gradient.jpg'
 import { arrowForwardBlue } from '../../assets/icons'
-import { americanExpress, brandChinaUnionpay, brandMasterCard, discover, payPal, visa } from '../../assets/logo/brands'
-import { instagram, google, linkedinIn, twitter, facebook, youtube, circleArrow } from '../../assets/icons'
+// import { americanExpress, brandChinaUnionpay, brandMasterCard, discover, payPal, visa } from '../../assets/logo/brands'
+import {
+    instagram,
+    // google, linkedinIn, twitter, youtube,
+    facebook, circleArrow
+} from '../../assets/icons'
 import { fonts, rootColors } from '../../helpers/constant'
 import { NavLink } from 'react-router-dom'
 import { menus } from '../../helpers/constant'
 import { layout } from '../../helpers/constant'
-
+import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 
 
 const { mobile, tablet, laptop } = layout
@@ -323,9 +327,9 @@ function Footer() {
                             <H5>Quick Links</H5>
                             <Links>
                                 {
-                                    quickLinks && quickLinks.map(({ name, path }, index) => {
+                                    quickLinks && quickLinks.map(({ name, path, anchor }, index) => {
                                         return <Li key={index + name} className='link'>
-                                            <NavLink to={path} > {name} </NavLink>
+                                            {anchor ? <AnchorLink href={anchor}>{name}</AnchorLink> : <NavLink to={path} > {name} </NavLink>}
                                         </Li>
                                     })
                                 }
@@ -340,7 +344,8 @@ function Footer() {
                                 {
                                     services && services.map(({ name, path }, index) => {
                                         return <Li key={index + name} className='link'>
-                                            <NavLink to={path} > {name} </NavLink>
+                                            <AnchorLink href="#services">{name}</AnchorLink>
+                                            {/* <NavLink to={path} > {name} </NavLink> */}
                                         </Li>
                                     })
                                 }
@@ -378,11 +383,11 @@ function Footer() {
                             <div className='followUs'>
                                 <H5>Follow Us On:</H5>
                                 <div className='socialIcons'>
-                                    <img src={youtube} alt="YouTube" width="" height="" />
+                                    {/* <img src={youtube} alt="YouTube" width="" height="" /> */}
                                     <img src={facebook} alt="Facebook" width="" height="" />
-                                    <img src={twitter} alt="Twitter" width="" height="" />
-                                    <img src={linkedinIn} alt="LinkedIn" width="" height="" />
-                                    <img src={google} alt="Google" width="" height="" />
+                                    {/* <img src={twitter} alt="Twitter" width="" height="" /> */}
+                                    {/* <img src={linkedinIn} alt="LinkedIn" width="" height="" /> */}
+                                    {/* <img src={google} alt="Google" width="" height="" /> */}
                                     <img src={instagram} alt="Instagram" width="" height="" />
                                 </div>
                             </div>
@@ -393,14 +398,14 @@ function Footer() {
                     <div className='divider'></div>
                     <BottomBox>
                         <P3>Copyright © 2023 - All Right Reserved.</P3>
-                        <div className='paymentGateway'>
+                        {/* <div className='paymentGateway'>
                             <img src={americanExpress} alt="American Express" width="" height="" />
                             <img src={brandChinaUnionpay} alt="UnionPay" width="" height="" />
                             <img src={brandMasterCard} alt="Mastercard" width="" height="" />
                             <img src={discover} alt="Discover" width="" height="" />
                             <img src={payPal} alt="PayPal" width="" height="" />
                             <img src={visa} alt="Visa" width="" height="" />
-                        </div>
+                        </div> */}
                     </BottomBox>
 
                 </Content>

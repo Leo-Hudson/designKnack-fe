@@ -6,7 +6,12 @@ import logo from '../../assets/logo/logo.svg'
 import { ContentBox } from '../Banners'
 import { PrimaryButton } from '../Buttons'
 import { P3 } from '../Typography'
-import { primaryMail, primaryPhone, facebook, instagram, linkedinIn, youtube, menuIcon } from '../../assets/icons'
+import {
+  primaryMail, primaryPhone, facebook, instagram,
+  // linkedinIn, youtube,
+  menuIcon
+} from '../../assets/icons'
+import AnchorLink from 'react-anchor-link-smooth-scroll-v2'
 
 const { mobile, tablet } = layout
 
@@ -258,14 +263,14 @@ function Header() {
               </div>
               <div>
                 <img src={primaryMail} alt="" width="" height="" />
-                <P3><a href="mailto:info@designknacks.com">info@designknacks.com</a></P3>
+                <P3><a href="mailto:info@designsknack.com">info@designsknack.com</a></P3>
               </div>
             </div>
             <div className='rightSide'>
               <img src={facebook} alt="Facebook Icon" width="" height="" />
               <img src={instagram} alt="Instgram Icon" width="" height="" />
-              <img src={linkedinIn} alt="LinkedIn Icon" width="" height="" />
-              <img src={youtube} alt="YouTube Icon" width="" height="" />
+              {/* <img src={linkedinIn} alt="LinkedIn Icon" width="" height="" />
+              <img src={youtube} alt="YouTube Icon" width="" height="" /> */}
             </div>
 
           </ContentBox>
@@ -281,7 +286,9 @@ function Header() {
                 <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
-                <span onClick={() => setService(!isService)}>Services</span>
+                {/* <span onClick={() => setService(!isService)}>Services</span> */}
+                <AnchorLink href="#services">Services</AnchorLink>
+                {/* <span>Services</span> */}
                 {
                   isService && <SubMenus>
                     <li className='subLink' onClick={() => setDefault()}>
@@ -302,7 +309,8 @@ function Header() {
 
               </li>
               <li onClick={() => setDefault("desktop")}>
-                <NavLink to={"/how-we-work"}>How We Work</NavLink>
+                <AnchorLink href="#work">How We Work</AnchorLink>
+                {/* <NavLink to={"/how-we-work"}>How We Work</NavLink> */}
               </li>
               <li onClick={() => setDefault("desktop")}>
                 <NavLink to={"/contact-us"}>Contact Us</NavLink>

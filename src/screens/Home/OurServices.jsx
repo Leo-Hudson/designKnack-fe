@@ -307,7 +307,7 @@ function OurServices() {
             <img src={triangle} alt="" className='triangle' width="" height="" />
             <div className='blankBox'></div>
             <ContentBox>
-                <Content>
+                <Content id='services'>
                     {/* Counter Box */}
                     <div className='counterContent'>
                         <BoxHeading className='boxHeading'>OUR SERVICES</BoxHeading>
